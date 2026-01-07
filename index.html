@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Payment Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>💰 Student Payment Overview</h1>
+      <p class="demo-note">Demo Version – No real payments</p>
+
+      <!-- Student Info -->
+      <div class="card">
+        <h2>Student Information</h2>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Class:</strong> JSS 2</p>
+        <p><strong>Session:</strong> 2024 / 2025</p>
+        <p><strong>Term:</strong> First Term</p>
+      </div>
+
+      <!-- Fees -->
+      <div class="card">
+        <h2>Fees Structure</h2>
+        <ul class="fees-list">
+          <li>Tuition <span>₦120,000</span></li>
+          <li>Exam Fee <span>₦10,000</span></li>
+          <li>Development <span>₦20,000</span></li>
+          <li class="total">Total <span id="totalFee">₦150,000</span></li>
+        </ul>
+      </div>
+
+      <!-- Progress -->
+      <div class="card">
+        <h2>Payment Progress</h2>
+        <div class="progress-bar">
+          <div id="progressFill"></div>
+        </div>
+        <p id="progressText"></p>
+      </div>
+
+      <!-- Summary -->
+      <div class="card summary">
+        <div>
+          <h3>Paid</h3>
+          <p id="amountPaid">₦0</p>
+        </div>
+        <div>
+          <h3>Balance</h3>
+          <p id="balance" class="danger">₦0</p>
+        </div>
+        <div>
+          <h3>Status</h3>
+          <span id="status" class="badge unpaid">Not Paid</span>
+        </div>
+      </div>
+
+      <!-- Admin Controls -->
+      <div class="card admin">
+        <button onclick="addPayment()">➕ Add Payment</button>
+        <button onclick="printReceipt()">🧾 Download Receipt</button>
+      </div>
+
+      <!-- History -->
+      <div class="card">
+        <h2>Payment History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Method</th>
+            </tr>
+          </thead>
+          <tbody id="paymentHistory"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
